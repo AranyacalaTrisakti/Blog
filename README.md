@@ -1,7 +1,7 @@
-# [aranyacala.github.io](https://aranyacala.github.io)
+# [aranyacala.zulma.id](https://aranyacala.zulma.id)
 
 This is the source code for my blog hosted on the following
-url: https://aranyacala.github.io. This source code was adapted from the
+url: https://aranyacala.zulma.id. This source code was adapted from the
 [Jekyll-Uno](https://github.com/joshgerdes/jekyll-uno) theme created by
 Josh Gerdes.
 
@@ -46,7 +46,7 @@ build the blog offline on your machine:
 
 - clone the repository from GitHub:
   ```
-  git clone https://github.com/Aranyacala/aranyacala.github.io.git
+  git clone https://github.com/Aranyacala/Blog.git
   ```
 - Install gems found in `Gemfile`:
   ```

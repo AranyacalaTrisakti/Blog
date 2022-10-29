@@ -1,7 +1,7 @@
 # Site settings
 title: "Aranyacala's Blog"
 description: "Mahasiswa Pecinta Alam Aranyacala Trisakti"
-url: 'https://aranyacala.github.io'
+url: 'https://aranyacala.zulma.id'
 cover: images/forest.jpg
 baseurl: ''
 google_analytics: ''
@@ -10,7 +10,7 @@ disqus_shortname: 'Aranyacala'
 author:
   name: 'MPA Aranyacala Trisakti'
   pronouns: ""
-  website: aranyacala.github.io
+  website: aranyacala.zulma.id
   email: admin@aranyacala.com  
   instagram: mpa_aranyacala
   linkedin: mpa-aranyacala-trisakti
