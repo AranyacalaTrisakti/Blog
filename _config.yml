@@ -1,0 +1,70 @@
+# Site settings
+title: "Aranyacala's Blog"
+description: "Mahasiswa Pecinta Alam Aranyacala Trisakti"
+url: 'https://aranyacala.github.io'
+cover: images/forest.jpg
+baseurl: ''
+google_analytics: ''
+disqus_shortname: 'Aranyacala'
+
+author:
+  name: 'MPA Aranyacala Trisakti'
+  pronouns: ""
+  website: aranyacala.github.io
+  email: admin@aranyacala.com  
+  instagram: mpa_aranyacala
+  linkedin: mpa-aranyacala-trisakti
+  facebook: mpaaranyacala
+  twitter: mpa_aranyacala
+
+collections_dir: my_collections
+collections:
+  ekspedisi:
+    output: true
+    permalink: /:collection/:path
+    title: "Ekspedisi"
+    show: true
+  operasional:
+    output: true
+    permalink: /:collection/:path
+    title: "Operasional"
+    show: true
+  event:
+    output: true
+    permalink: /:collection/:path
+    title: "Event"
+    show: true
+  misc:
+    output: true
+    permalink: /:collection/:path
+    title: "Misc."
+    show: false
+
+defaults:
+  -
+    scope:
+      path: "my_collections/*" # all files inside my_collections
+    values:
+      layout: "post" #post.html
+
+# Build settings
+destination: _site
+# paginate: 10
+# permalink: /:collection
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  mathjax: true  #use mathjax to process math equations
+  input: GFM # use Github Flavored Markdown
+  hard_wrap: false # do not replace newlines by <br>
+
+# plugins:
+#   - jekyll-paginate
+#   - jekyll-spaceship
+
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
