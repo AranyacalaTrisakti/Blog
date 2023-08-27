@@ -49,7 +49,7 @@ twitter: https://twitter.com
 ---
 Ini bagian deskripsi bisa diisi catatan tentang diri member ARY
 
-*NOMOR ARY FORMAT LENGKAP*
+NOMOR ARY FORMAT LENGKAP
 ```
 
 Hasil jadinya akan seperti contoh dibawah ini:
@@ -68,5 +68,5 @@ twitter: https://twitter.com/azharrizkyz
 ---
 I'm a Information System, Independent Developer, Publisher, Mountaineer, Nature Lovers, Musician, Producer, and Blogger.
 
-*735/ARY/22*
+735/ARY/22
 ```
