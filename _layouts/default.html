@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html>
-  {% include head.html %}
+<html lang="en">
 
-  <body>
-    {% include cover.html %}
+{% include head.html %}
 
-    <div class="content-wrapper">
-      <div class="content-wrapper__inner">
-        {{ content }}
+<body>
+
+  {% if site.data.settings.google-analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+
+  <!-- begin global wrap -->
+  <div class="global-wrap">
+
+    {% if site.data.settings.hero.hero__image and page.url == '/' %}
+    <!-- begin hero image -->
+    <div class="hero__image">
+      <div class="hero__image__inner">
+        <img class="lazy" data-src="{{site.data.settings.hero.hero__image}}" alt="{{site.data.settings.title}}">
       </div>
-      {% include footer.html %}
     </div>
-  </body>
+    <!-- end hero image -->
+    {% endif %}
+  
+    {% include header.html %}
+  
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+      {{ content }}
+    </main>
+    <!-- end content -->
+  
+    {% include subscribe.html %}
+  
+    {% include footer.html %}
+
+  </div>
+  <!-- end global wrap -->
+
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <script src="{{ site.baseurl }}/js/common.js"></script>
+</body>
+
 </html>

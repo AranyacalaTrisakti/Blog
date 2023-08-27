@@ -1,70 +1,57 @@
-# Site settings
-title: "Aranyacala's Blog"
-description: "Mahasiswa Pecinta Alam Aranyacala Trisakti"
-url: 'https://aranyacala.zulma.id'
-cover: images/forest.jpg
-baseurl: ''
-google_analytics: ''
-disqus_shortname: 'Aranyacala'
+#-------------------------------
+# General Site Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-author:
-  name: 'MPA Aranyacala Trisakti'
-  pronouns: ""
-  website: aranyacala.zulma.id
-  email: admin@aranyacala.com  
-  instagram: mpa_aranyacala
-  linkedin: mpa-aranyacala-trisakti
-  facebook: mpaaranyacala
-  twitter: mpa_aranyacala
 
-collections_dir: my_collections
-collections:
-  ekspedisi:
-    output: true
-    permalink: /:collection/:path
-    title: "Ekspedisi"
-    show: true
-  operasional:
-    output: true
-    permalink: /:collection/:path
-    title: "Operasional"
-    show: true
-  event:
-    output: true
-    permalink: /:collection/:path
-    title: "Event"
-    show: true
-  misc:
-    output: true
-    permalink: /:collection/:path
-    title: "Misc."
-    show: false
-
-defaults:
-  -
-    scope:
-      path: "my_collections/*" # all files inside my_collections
-    values:
-      layout: "post" #post.html
-
-# Build settings
-destination: _site
-# paginate: 10
-# permalink: /:collection
+#-------------------------------
+# Build Settings
 markdown: kramdown
-highlighter: rouge
+permalink: /:title
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+paginate: 7
+paginate_path: "/blog/page/:num"
+
+
+#-------------------------------
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  authors:
+    output: true
+    permalink: /:name
+
+# Pages Path
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+
 
 sass:
-    sass_dir: _sass
-    style: compressed
-
-kramdown:
-  mathjax: true  #use mathjax to process math equations
-  input: GFM # use Github Flavored Markdown
-  hard_wrap: false # do not replace newlines by <br>
-
-# plugins:
-#   - jekyll-paginate
-#   - jekyll-spaceship
-
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
+  sass_dir: _sass
+  style: compressed
