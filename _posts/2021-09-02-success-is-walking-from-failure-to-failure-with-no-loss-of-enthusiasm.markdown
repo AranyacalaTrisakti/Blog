@@ -2,7 +2,7 @@
 layout: post
 title:  Success is walking from failure to failure with no loss of enthusiasm
 date:   2021-09-02 15:01:35 +0300
-author: nolan
+author: 735
 image:  '/images/25.jpg'
 tags:   [travel, egypt]
 tags_color: '#ca622c'

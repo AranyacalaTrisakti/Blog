@@ -2,7 +2,7 @@
 layout: post
 title:  Things work out best for those who make the best of how things work out
 date:   2021-09-03 15:01:35 +0300
-author: tiana
+author: 735
 image:  '/images/24.jpg'
 tags:   [italy, travel]
 tags_color: '#618770'

@@ -3,7 +3,7 @@ layout: post
 title: The longer I live, the more beautiful life becomes
 description:
 date: 2019-10-14 15:01:35 +0300
-author: nolan
+author: aranyacala
 image: '/images/15.jpg'
 video_embed: https://www.youtube.com/embed/4Z9mUjtFJYY
 tags: [video, productivity]

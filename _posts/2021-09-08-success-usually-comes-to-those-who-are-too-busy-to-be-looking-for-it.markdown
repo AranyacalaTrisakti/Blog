@@ -2,7 +2,7 @@
 layout: post
 title:  Success usually comes to those who are too busy to be looking for it
 date:   2021-09-08 15:01:35 +0300
-author: nolan
+author: aranyacala
 image:  '/images/19.jpg'
 tags:   [travel]
 tags_color: '#618770'

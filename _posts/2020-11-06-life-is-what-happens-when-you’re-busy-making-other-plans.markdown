@@ -3,7 +3,7 @@ layout: post
 title:  Life is what happens when you’re busy making other plans
 description: These complex processes, called physiological functions, have underlying physical and chemical bases, as well as signaling and control mechanisms that are essential to maintaining life.
 date:   2020-11-06 15:01:35 +0300
-author: tiana
+author: 735
 image:  '/images/05.jpg'
 video_embed:
 tags:   [technology]

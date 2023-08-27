@@ -1,8 +1,8 @@
 #-------------------------------
 # Site Settings
-title: Mria
-logo: # You can add own logo. For example '/images/logo.png'.
-description: Mria is a multipurpose blog theme for Jekyll
+title: Aranyacala
+logo: '/images/assets/avatar.png' # You can add own logo. For example '/images/logo.png'.
+description: Aranyacala blog is a place where you can find the best articles about travel, lifestyle, and nature preservation. # Add a description of your site
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 
@@ -24,8 +24,8 @@ menu__settings:
         title: 'About'
       - url: '/contact/'
         title: 'Contact'
-      - url: '/elements/'
-        title: 'Elements'
+#      - url: '/elements/'
+#        title: 'Elements'
 
 
 #-------------------------------
@@ -34,15 +34,15 @@ hero:
   enable: true
   hero__title: Thoughts, stories and ideas.
   hero__description: Don’t limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve.
-  hero__image: # You can add hero image. For example '/images/06.jpg'
+  hero__image: /images/assets/forest.jpg # You can add hero image. For example '/images/06.jpg'
 
 
 #-------------------------------
 # Author Global Settings
 author:
-  author__name: Alena Curtis
-  author__bio: I’m a published content creator, brand copywriter, photographer, and social media content creator and manager. I help brands connect with their customers by developing engaging content that entertains, educates, and offers value to their audience.
-  author__avatar: /images/01-1.jpg
+  author__name: Aranyacala
+  author__bio: Aranyacala Nature Lovers is a community to support Nature preservation.
+  author__avatar: /images/assets/avatar.png
 
 
 #-------------------------------
@@ -72,12 +72,12 @@ tag__settings:
 # Author Section Settings
 author__section:
   enable: true
-  author__section__title: Hello, my name is Alena. I’m reviewer and content creator.
-  author__section__description: I’m a published content creator, brand copywriter, photographer, and social media content creator and manager. I help brands connect with their customers by developing engaging content that entertains, educates, and offers value to their audience.
-  aurhor__section__button__text: More About Me
+  author__section__title: Aranyacala Nature Lovers
+  author__section__description: Aranyacala blog is a place where you can find the best articles about travel, lifestyle, and nature preservation.
+  aurhor__section__button__text: More About Aranyacala
   aurhor__section__button__link: /about
-  author__section__big__image: /images/100.jpg
-  author__section__small__image: /images/101.jpg
+  author__section__big__image: /images/assets/forest.jpg
+  author__section__small__image: /images/assets/avatar.png
 
 
 #-------------------------------
@@ -99,10 +99,10 @@ footer__description: Don’t limit yourself. Many people limit themselves to wha
 
 # Social Links
 social:
-- {icon: "twitter", link: "https://twitter.com"}
-- {icon: "facebook", link: "https://facebook.com"}
-- {icon: "codepen", link: "https://codepen.io"}
-- {icon: "pinterest", link: "https://pinterest.com"}
+- {icon: "instagram", link: "https://instagram.com/mpa_aranyacala"}
+- {icon: "facebook", link: "https://facebook.com/mpa_aranyacala"}
+- {icon: "twitter", link: "https://twitter.com/mpa_aranyacala"}
+- {icon: "linkedin", link: "https://linkedin.com/in/mpa_aranyacala"}
 - {icon: "vimeo", link: "https://vimeo.com"}
 
 # Example of adding a new link to the footer - {icon: "instagram", link: "https://instagram.com"}
@@ -118,8 +118,8 @@ footer__menu__settings:
       url: '/about/'
     - title: 'Contact'
       url: '/contact/'
-    - title: 'Elements'
-      url: '/elements/'
+#    - title: 'Elements'
+#      url: '/elements/'
 
 
 #-------------------------------
