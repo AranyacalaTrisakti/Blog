@@ -1,107 +1,62 @@
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  {% if page.robots %}
-  <meta name="robots" content="{{ page.robots }}">
-  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% comment %} Global Variables {% endcomment %}
-  {% if page.title %}
-    {% assign curr_title = page.title %}
-  {% else %}
-    {% assign curr_title = site.title %}
-  {% endif %}
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}</title>
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}'>
 
-  {% if page.excerpt %}
-    {% assign curr_description = page.excerpt | strip_html %}
-  {% else %}
-    {% assign curr_description = site.description %}
-    {% for collection in site.collections %}
-      {% if collection.label != "posts" %}
-        {% if forloop.first == false and forloop.last == false%}
-          {% assign curr_description = curr_description | append: ', ' %}
-        {% endif %}
-        {% if forloop.last %}
-          {% assign curr_description = curr_description | append: ', and ' %}
-        {% endif %}
-        {% assign curr_description = curr_description | append: ' ' | append: collection.title %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-  
-  {% if jekyll.environment == 'development' %}
-  {% assign curr_baseurl = site.baseurl %}
-  {% else %}
-  {% assign curr_baseurl = site.baseurl | prepend: site.url%}
-  {% endif %}
-  
-  {% if page.cover %}
-    {% assign curr_cover = page.cover | prepend: page.slug | prepend: "/media/" | prepend: page.collection %}
-  {% else %}
-    {% assign curr_cover = "/images/avatar.png" %}
-  {% endif %}
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
-  <title>{{curr_title}}</title>
-  <meta name="title" content="{{curr_title}}">
-  <meta name="description" content="{{curr_description}}">
-  <meta name="author" content="{{ site.author.name }}">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.url == "/" %}{{ site.data.settings.title }}{% else %}{{ page.title }} – {{ site.data.settings.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
+  <meta name="twitter:image:src" content="{{ page.image | absolute_url }}">
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="{{curr_title}}">
-  <meta itemprop="description" content="{{curr_description}}">
-  <meta itemprop="image" content="{{curr_baseurl}}/{{curr_cover}}">
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="{% if page.url == "/" %}{{ site.data.settings.title }}{% else %}{{ page.title }} – {{ site.data.settings.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.url == "/" %}{{ site.data.settings.description | strip_html | xml_escape }}{% elsif page.description %}{{ page.description | strip_html | xml_escape }}{% else %}{{ page.excerpt | strip_html | xml_escape }}{% endif %}">
+  <meta property="og:image" content="{{ page.image | absolute_url }}">
 
-  <!-- OpenGraph Meta Tags -->
-  <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Aranyacala's Blog"/>
-  <meta property="og:title" content="{{curr_title}}">
-  <meta property="og:description" content="{{curr_description}}">
-  <meta property="og:image" content="{{curr_baseurl}}/{{curr_cover}}">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{curr_title}}">
-  <meta name="twitter:description" content="{{curr_description}}">
-  {% if site.author.twitter_username %}
-  <meta name="twitter:creator" content="{{ site.author.twitter_username }}">
-  {% endif %}
-  <meta name="twitter:image" content="{{curr_baseurl}}/{{curr_cover}}">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;600;700&family=Noto+Serif:wght@700&display=swap" as="style">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{curr_baseurl}}/images/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="{{curr_baseurl}}/images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="{{curr_baseurl}}/images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="{{curr_baseurl}}/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="{{curr_baseurl}}/images/favicons/favicon-196x196.png" sizes="196x196">
-  <link rel="icon" type="image/png" href="{{curr_baseurl}}/images/favicons/android-chrome-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="{{curr_baseurl}}/images/favicons/android-chrome-512x512.png" sizes="512x512">
-  <link rel="manifest" href="{{curr_baseurl}}/images/favicons/manifest.json">
-  <link rel="shortcut icon" href="{{curr_baseurl}}/images/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#ffc40d">
-  <meta name="msapplication-TileImage" content="{{curr_baseurl}}/images/favicons/mstile-144x144.png">
-  <meta name="msapplication-square70x70logo" content="{{curr_baseurl}}/images/favicons/mstile-70x70.png" />
-  <meta name="msapplication-square150x150logo" content="{{curr_baseurl}}/images/favicons/mstile-150x150.png" />
-  <meta name="msapplication-wide310x150logo" content="{{curr_baseurl}}/images/favicons/mstile-310x150.png" />
-  <meta name="msapplication-square310x310logo" content="{{curr_baseurl}}/images/favicons/mstile-310x310.png" />
-  <meta name="theme-color" content="#ffffff">
-  
-  <link rel="stylesheet" href="{{curr_baseurl}}/css/main.css?{{site.time | date: '%s%N'}}">
-  <link rel="canonical" href="{% if page.canonical %}{{ page.canonical }}{% else %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{curr_baseurl}}/feed.xml">
-  <script type="text/javascript" src="{{curr_baseurl}}/js/jquery.v3.3.1.min.js"></script>
-  <!-- <script type="text/javascript" src="{{curr_baseurl}}/js/simple-jekyll-search.min.js"></script> -->
-  <script type="text/javascript" src="{{curr_baseurl}}/js/simple-blog-search.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+
+
+  <!-- Ionicons -->
+  <link rel="preload" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" as="style">
+
+  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <script>
+    {% if site.data.settings.color_scheme == "auto" %}
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    }
+    {% elsif site.data.settings.color_scheme == "light" %}
+      document.documentElement.setAttribute("light", "");
+      document.documentElement.classList.add('light-mode');
+    {% elsif site.data.settings.color_scheme == "dark" %}
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    {% else %}
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    }
+    {% endif %}
+  </script>
+
+  <style>
+  {% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+  </style>
 </head>
