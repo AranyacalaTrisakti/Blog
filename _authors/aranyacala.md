@@ -6,7 +6,7 @@ cover: '/images/assets/forest.jpg'
 location: Indonesia
 website: https://aranyacala.id
 instagram: https://instagram.com/mpa_aranyacala
-facebook: https://www.facebook.com/mpa_aranyacala
+facebook: https://www.facebook.com/mpaaranyacala
 linkedin: https://www.linkedin.com/company/mpa-aranyacala
 twitter: https://twitter.com/mpa_aranyacala
 ---
