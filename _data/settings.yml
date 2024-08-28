@@ -12,8 +12,8 @@ menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
-    - title: 'Blog'
-      url: '/blog/'
+    - title: 'Tentang kami'
+      url: '/TentangKami/'
     - title: 'Authors'
       url: '/authors'
     - title: 'Videos'
