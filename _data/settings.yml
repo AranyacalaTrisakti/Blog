@@ -13,7 +13,7 @@ menu__settings:
     - title: 'Home'
       url: '/'
     - title: 'Tentang Kami'
-      url: '/blog/'
+      url: '/Tentang_Kami/'
     - title: 'Authors'
       url: '/authors'
     - title: 'Videos'
