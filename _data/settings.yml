@@ -12,7 +12,7 @@ menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
-    - title: 'Blog'
+    - title: 'Tentang Kami'
       url: '/blog/'
     - title: 'Authors'
       url: '/authors'
