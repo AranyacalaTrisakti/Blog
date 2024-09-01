@@ -14,7 +14,7 @@ menu__settings:
       url: '/'
     - title: 'Tentang Kami'
       url: '/Tentang_Kami/'
-    - title: 'Authors'
+    - title: 'Perjalanan'
       url: '/authors'
     - title: 'Videos'
       url: '/videos/'
